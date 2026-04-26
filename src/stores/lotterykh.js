@@ -13,9 +13,7 @@ export const uselotterykh = defineStore('lotterykh', {
       this.loading = true
       this.error = null
       try {
-        const res = await api.get(
-          'https://lotteryk38.com/api/site/Lottery/results?date=2026%2F02%2F28&typeId=1',
-        )
+        const res = await api.get('/lottery?api_key=sSSc49ddNxTDl51hJmUhtZm1yf2V')
         this.Lotterykh = res.data
       } catch {
         this.error = 'Failed to fetch data lottery'

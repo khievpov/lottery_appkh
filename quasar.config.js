@@ -91,9 +91,14 @@ export default defineConfig((ctx) => {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver
     devServer: {
       // https: true,
-      open: true, // opens browser window automatically
+      //open: true, // opens browser window automatically
+      before(app) {
+        app.get('*.apk', (req, res, next) => {
+          res.set('Content-Type', 'application/vnd.android.package-archive')
+          next()
+        })
+      },
     },
-
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
     framework: {
       config: {},

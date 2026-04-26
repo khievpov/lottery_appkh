@@ -254,11 +254,3 @@ export default {
   },
 }
 </script>
-<script setup>
-import { uselotterykh } from 'src/stores/lotterykh'
-import { onMounted } from 'vue'
-const store = uselotterykh()
-onMounted(() => {
-  store.fetchlotterykh()
-})
-</script>

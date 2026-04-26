@@ -7,14 +7,6 @@ const routes = [
       { path: 'lotterykh', component: () => import('src/layouts/lotterykh.vue') },
     ],
   },
-  {
-    path: '/pagekhload24',
-    component: () => import('pages/HomePage.vue'),
-  },
-  {
-    path: '/components/users',
-    component: () => import('src/components/usersPage.vue'),
-  },
 
   // Always leave this as last one,
   // but you can also remove it
