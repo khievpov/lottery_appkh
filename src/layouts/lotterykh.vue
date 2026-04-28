@@ -29,7 +29,7 @@
 
         <div class="q-gutter-y-md q-pa-sm" style="max-width: 400px">
           <q-tabs v-model="tab" narrow-indicator dense class="text-primary">
-            <q-tab name="mails" icon="mails" label="ទាំងអស់" />
+            <q-tab name="all" icon="mails" label="ទាំងអស់" />
             <q-tab name="alarm1" icon="alarms" label="ខ្មែរ 10:35" />
             <q-tab name="alarm2" icon="alarms" label="ខ្មែរ 13:00" />
           </q-tabs>
@@ -96,7 +96,7 @@ const tab = ref('all')
 const times = ref([
   {
     id: 1,
-    code: 'mails',
+    code: 'all',
     name: 'ទាំងអស់',
     icon: 'mails',
   },
