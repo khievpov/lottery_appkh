@@ -83,19 +83,19 @@ export default {
 }
 </script>
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useLotterykhStore } from 'src/stores/lotterykh'
-const lotterykhStore = useLotterykhStore()
+import { ref } from 'vue'
+// import { useLotterykhStore } from 'src/stores/lotterykh'
+// const lotterykhStore = useLotterykhStore()
 
 const selectedDate = ref(new Date().toISOString().slice(0, 10))
 
-onMounted(() => {
-  async function loadData() {
-    await lotterykhStore.fetchLotterykh()
-  }
-  loadData()
-  console.log('Component mounted with initial date:', selectedDate.value)
-})
+// onMounted(() => {
+//   async function loadData() {
+//     await lotterykhStore.fetchLotterykh()
+//   }
+//   loadData()
+//   console.log('Component mounted with initial date:', selectedDate.value)
+// })
 
 const tab = ref('all')
 
@@ -105,6 +105,7 @@ const times = ref([
     code: 'all',
     name: 'ទាំងអស់',
     icon: 'mails',
+    date: '' + new Date().toISOString().slice(0, 10),
   },
 
   {

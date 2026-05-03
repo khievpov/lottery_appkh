@@ -3,7 +3,6 @@
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
         <q-toolbar-title>
           មើលឆ្នោតប្រចាំថ្ងៃ
           <span class="absolute-top-right q-ma-lx q-pa-md">
