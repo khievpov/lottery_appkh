@@ -5,10 +5,12 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="src/assets/logo/logokh.jpg" />
-          </q-avatar>
           មើលឆ្នោតប្រចាំថ្ងៃ
+          <span class="absolute-top-right q-ma-lx q-pa-md">
+            <q-avatar>
+              <img src="src/assets/logo/logokh.jpg" />
+            </q-avatar>
+          </span>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>

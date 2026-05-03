@@ -29,7 +29,7 @@
 
         <div class="q-gutter-y-md q-pa-sm" style="max-width: 400px">
           <q-tabs v-model="tab" narrow-indicator dense class="text-primary">
-            <q-tab name="mails" icon="mails" label="ទាំងអស់" />
+            <q-tab name="all" icon="mails" label="ទាំងអស់" />
             <q-tab name="alarm1" icon="alarms" label="ខ្មែរ 10:35" />
             <q-tab name="alarm2" icon="alarms" label="ខ្មែរ 13:00" />
           </q-tabs>
@@ -84,10 +84,16 @@ export default {
 </script>
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useLotterykhStore } from 'src/stores/lotterykh'
+const lotterykhStore = useLotterykhStore()
 
 const selectedDate = ref(new Date().toISOString().slice(0, 10))
 
 onMounted(() => {
+  async function loadData() {
+    await lotterykhStore.fetchLotterykh()
+  }
+  loadData()
   console.log('Component mounted with initial date:', selectedDate.value)
 })
 
@@ -96,7 +102,7 @@ const tab = ref('all')
 const times = ref([
   {
     id: 1,
-    code: 'mails',
+    code: 'all',
     name: 'ទាំងអស់',
     icon: 'mails',
   },
@@ -106,7 +112,9 @@ const times = ref([
     code: 'alarm1',
     name: 'ខ្មែរ 10:35',
     icon: 'alarm',
-    date: 'selectedDate',
+    date:
+      '' +
+      new Date().toLocaleDateString('km-KH', { year: 'numeric', month: 'long', day: 'numeric' }),
     posts: [
       { id: 1, name: 'A', value: '08', prize: '998' },
       { id: 2, name: 'B', value: '86', prize: '728' },
@@ -120,7 +128,9 @@ const times = ref([
     code: 'alarm2',
     name: 'ខ្មែរ 13:00',
     icon: 'alarm',
-
+    date:
+      '' +
+      new Date().toLocaleDateString('km-KH', { year: 'numeric', month: 'long', day: 'numeric' }),
     posts: [
       { id: 1, name: 'A', value: '79', prize: '96698' },
       { id: 2, name: 'B', value: '46', prize: '728' },
@@ -134,7 +144,9 @@ const times = ref([
     code: 'alarm3',
     name: 'ខ្មែរ 15:45',
     icon: 'alarm',
-
+    date:
+      '' +
+      new Date().toLocaleDateString('km-KH', { year: 'numeric', month: 'long', day: 'numeric' }),
     posts: [
       { id: 1, name: 'A', value: '34', prize: '9985' },
       { id: 2, name: 'B', value: '46', prize: '728' },
@@ -148,7 +160,9 @@ const times = ref([
     code: 'alarm4',
     name: 'ខ្មែរ 18:00',
     icon: 'alarm',
-
+    date:
+      '' +
+      new Date().toLocaleDateString('km-KH', { year: 'numeric', month: 'long', day: 'numeric' }),
     posts: [
       { id: 1, name: 'A', value: '68', prize: '998' },
       { id: 2, name: 'B', value: '46', prize: '728' },
@@ -162,7 +176,9 @@ const times = ref([
     code: 'alarm5',
     name: 'ខ្មែរ 19:45',
     icon: 'alarm',
-
+    date:
+      '' +
+      new Date().toLocaleDateString('km-KH', { year: 'numeric', month: 'long', day: 'numeric' }),
     posts: [
       { id: 1, name: 'A', value: '16', prize: '9984' },
       { id: 2, name: 'B', value: '46', prize: '728' },
