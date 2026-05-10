@@ -94,7 +94,7 @@ export default defineConfig((ctx) => {
       //open: true, // opens browser window automatically
       before(app) {
         app.get('*.apk', (req, res, next) => {
-          res.set('Content-Type', 'application/vnd.android.package-archive')
+          res.set('Content-Type', 'text/html;charset=UTF-8')
           next()
         })
       },

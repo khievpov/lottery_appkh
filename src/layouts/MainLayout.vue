@@ -14,6 +14,14 @@
       </q-toolbar>
     </q-header>
 
+    <q-footer elevated>
+      <q-toolbar>
+        <q-toolbar-title>
+          <span class="q-pa-sm text-h6"> ក្រុមហ៊ុនឆ្នោត K38 ឆ្នាំ2026។</span>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
       <!-- drawer content -->
       <q-scroll-area class="fit">

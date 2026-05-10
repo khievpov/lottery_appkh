@@ -84,8 +84,8 @@ export default {
 </script>
 <script setup>
 import { ref } from 'vue'
-// import { useLotterykhStore } from 'src/stores/lotterykh'
-// const lotterykhStore = useLotterykhStore()
+// import { uselotterykh } from 'src/stores/lotterykh'
+// const lotterykhStore = uselotterykh()
 
 const selectedDate = ref(new Date().toISOString().slice(0, 10))
 
